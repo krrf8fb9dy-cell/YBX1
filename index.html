@@ -1110,6 +1110,12 @@ html>body{
       gap: 10px;
       align-items: stretch;
     }
+    #ifi-ybx-research-model .section-four-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
     #ifi-ybx-research-model .observations-grid { align-items: start; }
     #ifi-ybx-research-model .support-grid {
       display: grid;
@@ -1250,7 +1256,15 @@ html>body{
       grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
       gap: 7px;
       align-items: stretch;
-      margin-top: 10px;
+      max-width: 990px;
+      margin: 10px auto 0;
+    }
+    #ifi-ybx-research-model .validation-flow .step {
+      width: 100%;
+      max-width: 430px;
+      justify-self: center;
+      padding: 10px 12px;
+      text-align: left;
     }
     #ifi-ybx-research-model .validation-flow .step:nth-child(1) {
       background: color-mix(in srgb, var(--cat-ifi) 17%, var(--background));
@@ -1311,6 +1325,9 @@ html>body{
       #ifi-ybx-research-model .connector::before,
       #ifi-ybx-research-model .connector::after { width: 8%; }
     }
+    @media (max-width: 700px) {
+      #ifi-ybx-research-model .section-four-grid { grid-template-columns: 1fr; }
+    }
 
     #ifi-ybx-research-model .spec-arrow { display:inline-block; position:relative; width:1.8em; height:0.8em; margin:0 0.3em; vertical-align:middle; }
     #ifi-ybx-research-model .spec-arrow::before { content:""; position:absolute; left:0; right:0.2em; top:45%; border-top:2px dashed currentColor; }
@@ -1328,6 +1345,7 @@ html>body{
     #ifi-ybx-research-model .pathway { margin:5px 0; font-weight:400; line-height:inherit; }
     #ifi-ybx-research-model strong { font-weight:600; }
     #ifi-ybx-research-model .node, #ifi-ybx-research-model .branch, #ifi-ybx-research-model .step { padding:12px; }
+    #ifi-ybx-research-model .validation-flow .step { padding:10px 12px; }
     #ifi-ybx-research-model .source-row { margin-top:5px; line-height:inherit; }
     #ifi-ybx-research-model a, #ifi-ybx-research-model a:visited { color:#454b54; font-weight:400; }
     #ifi-ybx-research-model .source-row a { display:inline; white-space:normal; }
@@ -1340,12 +1358,6 @@ html>body{
       background: color-mix(in srgb, var(--foreground) 9%, var(--background));
     }
   </style>
-
-  <div class="lang-switch" style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px;font-size:var(--font-size-small);">
-    <span style="opacity:0.6;">Français</span>
-    <span aria-hidden="true">·</span>
-    <a href="immune-model-en.html">English</a>
-  </div>
 
   <div class="research-question" aria-label="Résumé du modèle" style="margin-bottom:16px;">
     <div class="node-title">En bref</div>
@@ -1380,6 +1392,9 @@ html>body{
       <div class="node-title">Versant T</div>
       <p>CD8 mémoire centrale ↑ ; CD4 CCR7/CXCR3 atypiques.</p>
       <p>DNT αβ ↑<sup><a href="#note-alps" aria-label="Note 1 : seuils ALPS">[1]</a></sup>.</p>
+      <p>Prolifération : premier test entièrement négatif ; second : PHA/anti-CD3 positifs, tétanos/HSV négatifs.</p>
+      <p>Herpesviridae rapportés : HSV récidivant et zona ; deux épisodes de mononucléose présumés, sans étiologie confirmée. Verrues plantaires récalcitrantes.</p>
+      <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/35276224/" target="_blank" rel="noopener noreferrer">Verrues récalcitrantes et immunité T · PMID 35276224</a></p>
     </section>
     <section class="node patient-card" aria-label="Indices inflammatoires cutanés observés">
       <div class="node-title">Indices inflammatoires</div>
@@ -1440,7 +1455,8 @@ html>body{
         <p><strong>Au second plan — modèle tumoral murin :</strong></p>
         <div class="pathway">LOXL4 (cellules tumorales) → rigidité matricielle ↑ → PIEZO1 (CD8) → Ca²⁺ ↑ → FAK1 (PTK2) → YAP1 nucléaire → YBX1 ↑ → recrutement d’ACLY + KAT2A → programme épigénétique d’épuisement CD8.</div>
         <p>La délétion de Ybx1 dans les CD8 bloque cet effet ; son atténuation sous hypomorphisme reste une extrapolation, non démontrée chez le patient.</p>
-        <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/32475063/" target="_blank" rel="noopener noreferrer">Survie T · PMID 32475063</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42726857/" target="_blank" rel="noopener noreferrer">Épuisement CD8 en contexte tumoral · PMID 42726857</a></p>
+        <p><strong>Réponse antigénique, piste exploratoire :</strong> un hypomorphisme pourrait modifier l’expansion ou la survie des T réactivés ; le lien avec les faibles réponses tétanos/HSV reste à démontrer.</p>
+        <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/32475063/" target="_blank" rel="noopener noreferrer">Survie T · PMID 32475063</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/28009354/" target="_blank" rel="noopener noreferrer">Prolifération T · PMID 28009354</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42726857/" target="_blank" rel="noopener noreferrer">Épuisement CD8 en contexte tumoral · PMID 42726857</a></p>
       </div>
     </div>
 
@@ -1498,6 +1514,7 @@ html>body{
   </div>
 
   <h2 class="section-head">4 · Fonctions contextuelles de YBX1 et terrain familial</h2>
+  <div class="section-four-grid">
       <div class="node tgfb">
         <span class="viz-badge section4-badge">boucles contextuelles</span>
         <div class="node-title">Boucles IFN-γ / TGF-β</div>
@@ -1506,12 +1523,13 @@ html>body{
         <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/16278212/" target="_blank" rel="noopener noreferrer">JAK1 · PMID 16278212</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12917425/" target="_blank" rel="noopener noreferrer">CK2 · PMID 12917425</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19036157/" target="_blank" rel="noopener noreferrer">ERK/RSK contextuel · PMID 19036157</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42153611/" target="_blank" rel="noopener noreferrer">iNKT · PMID 42153611</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12917425/" target="_blank" rel="noopener noreferrer">PMID 12917425</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16278212/" target="_blank" rel="noopener noreferrer">PMID 16278212</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/28153731/" target="_blank" rel="noopener noreferrer">PMID 28153731</a></p>
       </div>
 
-    <div class="node tgfb spaced">
+    <div class="node tgfb">
       <span class="viz-badge section4-badge">terrain familial</span>
         <div class="node-title">Contexte familial distinct</div>
       <p>Le phénotype conjonctivo-vasculaire Loeys–Dietz-like est familial et compatible avec une dérégulation TGF-β non résolue. L’immunodéficience ne concerne pas les apparentés et YBX1 ne ségrège pas : il ne peut expliquer le terrain familial, mais pourrait en modifier les sorties chez le patient.</p>
       <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/24355923/" target="_blank" rel="noopener noreferrer">Activation TGF-β paradoxale · PMID 24355923</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK1133/" target="_blank" rel="noopener noreferrer">GeneReviews</a></p>
     </div>
+  </div>
 
   <h2 class="section-head">5 · Question de recherche et chaîne de validation</h2>
   <div class="research-question">
@@ -1545,6 +1563,7 @@ html>body{
     <ul>
       <li><strong>Hypomorphisme prioritaire :</strong> la synthèse de l’audit in silico privilégie nettement un hypomorphisme d’épissage partiel : SpliceAI DS_DG 0,439 et Pangolin DS_SG 0,106 ciblent le même donneur cryptique à −5, renforcé par MaxEntScan 4,11 → 9,57. Cette orientation ne quantifie toutefois ni l’utilisation du site ni la perte d’activité ; l’effet ARN/protéine reste à établir.</li>
       <li><strong>Alternative à départager :</strong> la séparation de fonctions nécessite des effets dissociés, au-delà de différences de sensibilité entre cellules. Elle ne doit pas expliquer automatiquement tout résultat discordant. Un épissage et une fonction préservés affaibliraient la piste YBX1.</li>
+      <li>Les deux tests de prolifération ne démontrent pas une anomalie antigénique sélective répétée : le premier est entièrement négatif ; au second, PHA/anti-CD3 sont positifs et tétanos/HSV négatifs. La viabilité cellulaire et les conditions techniques du premier test doivent être vérifiées avant d’en inférer une atteinte globale. Ce profil, les antécédents herpétiques rapportés et les verrues récalcitrantes ne prouvent ni un défaut T intrinsèque ni une contribution de YBX1.</li>
       <li>IFIH1 A946T et IRF5 4×CGGGG sont des allèles de risque communs ; leur épistasie avec YBX1 n’est pas établie et la phase IRF5 reste à confirmer.</li>
       <li>La délétion GBP3 est assez commune : son rôle de modificateur reste spéculatif et ne suffit pas à expliquer le phénotype.</li>
       <li>Le lichen est un indice cutané, non un dosage systémique des IFN ; le terrain TGF-β familial reste inféré et sans cause génétique identifiée.</li>
