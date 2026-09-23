@@ -1339,10 +1339,6 @@ html>body{
       border-left-color: var(--muted-foreground);
       background: color-mix(in srgb, var(--foreground) 9%, var(--background));
     }
-    #ifi-ybx-research-model .core > .viz-grid > .node > .viz-badge {
-      background: color-mix(in srgb, var(--foreground) 15%, var(--background));
-      color: var(--foreground);
-    }
   </style>
 
   <div class="lang-switch" style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px;font-size:var(--font-size-small);">
@@ -1353,7 +1349,7 @@ html>body{
 
   <div class="research-question" aria-label="Résumé du modèle" style="margin-bottom:16px;">
     <div class="node-title">En bref</div>
-    <p><strong>Phénotype :</strong> déficit humoral sous immunoglobulines substitutives, DNT αβ élevées sans variant ALPS classique identifié (FAS, FASLG, CASP8, CASP10, NRAS/KRAS), et terrain inflammatoire cutané/digestif (lichen plan généralisé, Crohn cutané probable) compatible avec une activité IFN-I/IFN‑γ.</p>
+    <p><strong>Phénotype :</strong> déficit humoral sous immunoglobulines substitutives et terrain inflammatoire (lichen plan généralisé, Crohn cutané probable) compatible avec une activité IFN-I/IFN‑γ. <strong>Panel NGS de déficits immunitaires primitifs (PID) revenu négatif.</strong></p>
     <p><strong>Question centrale :</strong> un variant YBX1 hétérozygote (c.231−96C&gt;G), orienté par plusieurs outils convergents vers un hypomorphisme d’épissage partiel, pourrait-il relier ce déficit humoral et ce fond inflammatoire par une seule voie moléculaire, plutôt que d’invoquer des mécanismes indépendants pour chaque anomalie ?</p>
     <p><strong>Pourquoi maintenant :</strong> une étude publiée en août 2026 montre, pour la première fois, que la perte de YBX1 suffit à déclencher une réponse IL‑6/STAT3 et une hausse des gènes stimulés par l’interféron via les ARN Pol III et RIG‑I — un mécanisme expérimental susceptible de relier déficit humoral et inflammation.</p>
     <p class="section-note" style="margin-top:9px;">Détail complet, sources et limites explicites ci-dessous — hypothèse de recherche falsifiable, non un diagnostic établi.</p>
@@ -1372,7 +1368,7 @@ html>body{
   </div>
 
   <h2 class="section-head">1 · Point de départ prioritaire : la discordance immunitaire observée</h2>
-  <p class="section-note">Le noyau YBX1 doit surtout expliquer le rendement humoral insuffisant. Les DNT restent une observation parallèle, non assignée à un défaut d’apoptose.</p>
+  <p class="section-note">Le noyau YBX1 vise prioritairement le déficit humoral et la dérégulation inflammatoire.</p>
   <div class="viz-grid observations-grid">
     <section class="node patient-card no-title-gap" aria-label="Phénotype B et humoral observé">
       <div class="node-title">Versant B/humoral</div>
@@ -1383,9 +1379,7 @@ html>body{
     <section class="node patient-card" aria-label="Phénotype T observé">
       <div class="node-title">Versant T</div>
       <p>CD8 mémoire centrale ↑ ; CD4 CCR7/CXCR3 atypiques.</p>
-      <div class="metric">DNT CD4⁻CD8⁻ : 140 cellules/mm³ · 7,6 % des T</div>
-      <p>DNT TCRαβ⁺ ↑ : 47/mm³ · ≈2,56 % des T (33,8 % des DNT) ; DNT TCRγδ⁺ : 93/mm³ (66,2 % des DNT).</p>
-      <p class="source-row">↑ : fraction αβ au-dessus du seuil immunophénotypique utilisé dans l’évaluation de l’ALPS ; voir section 4.</p>
+      <p>DNT αβ ↑<sup><a href="#note-alps" aria-label="Note 1 : seuils ALPS">[1]</a></sup>.</p>
     </section>
     <section class="node patient-card" aria-label="Indices inflammatoires cutanés observés">
       <div class="node-title">Indices inflammatoires</div>
@@ -1445,8 +1439,7 @@ html>body{
         <p>Dans les CD4 activés humains, la diminution de YBX1 réduit Akt, BCL-2 et BCL-xL et augmente PUMA, la caspase-3 et l’apoptose : c’est la direction attendue d’un hypomorphisme.</p>
         <p><strong>Au second plan — modèle tumoral murin :</strong></p>
         <div class="pathway">LOXL4 (cellules tumorales) → rigidité matricielle ↑ → PIEZO1 (CD8) → Ca²⁺ ↑ → FAK1 (PTK2) → YAP1 nucléaire → YBX1 ↑ → recrutement d’ACLY + KAT2A → programme épigénétique d’épuisement CD8.</div>
-        <p>La délétion de Ybx1 dans les CD8 bloque cet effet ; son atténuation sous hypomorphisme reste une extrapolation, sans preuve d’apoptose réduite ni d’expansion des DNT.</p>
-        <p><strong>Alternative exploratoire :</strong> une séparation de fonctions pourrait réduire l’apoptose T et contribuer aux DNT αβ mesurés ↑ ; lien hypothétique, distinct d’un effet indirect du contexte inflammatoire.</p>
+        <p>La délétion de Ybx1 dans les CD8 bloque cet effet ; son atténuation sous hypomorphisme reste une extrapolation, non démontrée chez le patient.</p>
         <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/32475063/" target="_blank" rel="noopener noreferrer">Survie T · PMID 32475063</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42726857/" target="_blank" rel="noopener noreferrer">Épuisement CD8 en contexte tumoral · PMID 42726857</a></p>
       </div>
     </div>
@@ -1459,7 +1452,7 @@ html>body{
   </section>
 
   <h2 class="section-head">3 · Fond sensibilisateur : charge d’activation IFN/TLR</h2>
-  <p class="section-note">La perte de YBX1 peut elle-même lever un frein à l’immunogénicité des ARN endogènes ; IFIH1 et IRF5 renforcent la stimulation en amont, l’ADN mitochondrial fournit une boucle possible et GBP3 une sortie effectrice en aval.</p>
+  <p class="section-note">La perte de YBX1 peut lever un frein à l’immunogénicité des ARN endogènes ; IFIH1–IRF5 constitue un fond sensibilisateur. Les pistes mitochondriale et GBP3 restent secondaires.</p>
   <div class="two-grid">
     <div class="node ifi">
       <span class="viz-badge">pression initiale</span>
@@ -1482,46 +1475,29 @@ html>body{
     <p class="source-row text-small"><a href="https://www.pnas.org/doi/10.1073/pnas.2605741123" target="_blank" rel="noopener noreferrer"><em>YBX1 regulates RNA polymerase III transcripts to prevent inflammation</em> · PNAS, publié en ligne le 21 août 2026</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42627844/" target="_blank" rel="noopener noreferrer">PMID 42627844</a></p>
   </div>
   <div class="two-grid spaced" aria-label="Amplificateurs secondaires : ADN mitochondrial et GBP3">
-  <div class="node hypothesis" aria-label="Lien hypothétique entre stress de l’ADN mitochondrial et interféron de type I">
-    <span class="viz-badge">amplificateur secondaire possible</span>
-    <div class="node-title">Stress de l’ADN mitochondrial → cGAS–STING–IRF3 → IFN-I</div>
-    <p>Un stress de l’ADN mitochondrial peut favoriser sa fuite dans le cytosol, où il active cGAS–STING–IRF3 et augmente les gènes stimulés par l’interféron. Ce relais reste non démontré chez le patient.</p>
-    <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/25642965/" target="_blank" rel="noopener noreferrer">ADN mitochondrial et réponse IFN-I · PMID 25642965</a></p>
+  <div class="node hypothesis" aria-label="Résumé de la piste mitochondriale">
+    <span class="viz-badge">extension mitochondriale possible</span>
+    <div class="node-title">YBX1 et stress mitochondrial</div>
+    <p>Hypomorphisme YBX1 → réparation/mitophagie possiblement altérées → dysfonction sans déplétion obligatoire ; une fuite d’ADN mitochondrial pourrait activer cGAS–STING → IFN-I. Non démontré chez le patient.</p>
+    <p class="source-row"><a href="https://pubmed.ncbi.nlm.nih.gov/19272840/" target="_blank" rel="noopener noreferrer">Réparation · PMID 19272840</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/35195911/" target="_blank" rel="noopener noreferrer">Mitophagie · PMID 35195911</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/25642965/" target="_blank" rel="noopener noreferrer">IFN-I · PMID 25642965</a></p>
   </div>
   <div class="node gbp" aria-label="Modificateur aval possible par perte de fonction homozygote de GBP3">
     <span class="viz-badge">modificateur aval toléré</span>
     <div class="node-title">GBP3 DEL00000398 · LoF homozygote</div>
-    <p>La délétion de 2 651 pb des exons 7–8, assez commune en population, peut diminuer certaines sorties antivirales/caspase-4. Une clairance moins efficace pourrait prolonger secondairement le stimulus IFN/TLR ; aucune maladie mendélienne GBP3 n’est établie.</p>
-    <p class="source-row text-small"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9243035/" target="_blank" rel="noopener noreferrer">délétion exons 7–8 et expression GBP3 ↓</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22106366/" target="_blank" rel="noopener noreferrer">PMID 22106366</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32541830/" target="_blank" rel="noopener noreferrer">PMID 32541830</a></p>
+    <p>Délétion homozygote des exons 7–8 (2 651 pb), assez commune, sans maladie mendélienne attribuée. Modificateur possible des défenses antivirales/caspase-4 ; impact clinique indéterminé.</p>
+    <p class="source-row text-small"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9243035/" target="_blank" rel="noopener noreferrer">Délétion GBP3</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22106366/" target="_blank" rel="noopener noreferrer">PMID 22106366</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32541830/" target="_blank" rel="noopener noreferrer">PMID 32541830</a></p>
   </div>
   </div>
-  <div class="connector">IFN-I répété → activation/turnover + homing ; GBP3 LoF pourrait réduire l’efficacité d’une sortie aval et prolonger indirectement le stimulus</div>
+  <div class="connector">IFN-I répété → activation/renouvellement + homing</div>
   <div class="node hypothesis">
     <div class="node-title">Réorganisation proposée des compartiments sous IFN-I</div>
     <p><strong>Versant B :</strong> l’IFN-I stimule activation et renouvellement et peut imprimer des états mémoire atypiques. Une pression persistante pourrait contribuer à l’augmentation des transitionnels et des B CD27−IgD− ; si YBX1 limite parallèlement le signal BCR et la traduction des Ig, la sortie CD38<sup>haut</sup>IgM− et anticorps peut néanmoins rester insuffisante.</p>
     <p><strong>Versant T :</strong> des signaux IFN-I répétés pourraient modifier activation et différenciation ; le recrutement tissulaire via CXCR3 contribuerait aux profils mémoire et CCR7/CXCR3 observés, sans les expliquer spécifiquement.</p>
-    <div class="exploratory-block" aria-label="Extension exploratoire DNT">
-    <span class="viz-badge">Extension exploratoire — DNT</span>
-    <p>Le modèle vise prioritairement le déficit humoral et la dérégulation inflammatoire. L’élévation des DNT αβ pourrait leur être liée directement, indirectement ou relever de déterminants en partie indépendants. Son intégration au même mécanisme reste une question ouverte ; les pistes ci-dessous ne sont pas nécessaires à la validité du modèle principal.</p>
-    <p><strong>Génération :</strong> IFN-I / activation chronique <span class="spec-arrow" role="img" aria-label="lien hypothétique"></span> CREMα ↑ → répression de CD8A/CD8B → conversion CD8⁺→DN possible. Le mécanisme CREMα–CD8 est documenté dans le lupus ; son recrutement par l’IFN-I chez le patient reste hypothétique.</p>
-    <p><strong>Persistance — possibilités non hiérarchisées :</strong> plusieurs signaux cytokiniques pourraient favoriser la survie, avec des preuves provenant de contextes différents :</p>
-    <p><strong>IL‑6 → STAT3 <span class="spec-arrow" role="img" aria-label="lien hypothétique"></span> cFLIP ↑ → apoptose via Fas possiblement ↓ :</strong> relais extrapolé de modèles hépatiques. <a href="https://pubmed.ncbi.nlm.nih.gov/11349125/" target="_blank" rel="noopener noreferrer">PMID 11349125</a> · <a href="https://doi.org/10.1172/JCI17970" target="_blank" rel="noopener noreferrer">STAT3/FLIP</a>.</p>
-    <p><strong>IL‑17A/F → mort induite par Fas ↓ :</strong> effet observé dans des T humains, notamment avec le sérum de patients ALPS/DALD. <a href="https://pubmed.ncbi.nlm.nih.gov/24363402/" target="_blank" rel="noopener noreferrer">PMID 24363402</a>.</p>
-    <p>Ces signaux <span class="spec-arrow" role="img" aria-label="lien hypothétique"></span> <strong>persistance des DNT chez le patient :</strong> raccord exploratoire, sans mécanisme privilégié ni apoptose réduite démontrée. Prolifération et redistribution peuvent aussi modifier les effectifs.</p>
-    </div>
     <p>Il s’agit d’un modèle de flux et de proportions, compatible avec le profil observé mais non spécifique et non démontré cellule par cellule chez le patient.</p>
-    <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/28018990/" target="_blank" rel="noopener noreferrer">IFN-I et états T chroniques · PMID 28018990</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12773510/" target="_blank" rel="noopener noreferrer">CXCR3 et trafic T · PMID 12773510</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/38593796/" target="_blank" rel="noopener noreferrer">IFN-I et mémoire B atypique · PMID 38593796</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/24297179/" target="_blank" rel="noopener noreferrer">CREMα et silençage de CD8 · PMID 24297179</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/11160159/" target="_blank" rel="noopener noreferrer">STAT3–MCL‑1 et survie des T-LGL (analogie) · PMID 11160159</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/9501089/" target="_blank" rel="noopener noreferrer">signalisation Fas type I/II · PMID 9501089</a> · <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3194425/" target="_blank" rel="noopener noreferrer">CREMα-Tg × Fas−/− et expansion des DNT · Pediatric Rheumatology 2011</a></p>
+    <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/28018990/" target="_blank" rel="noopener noreferrer">IFN-I et états T chroniques · PMID 28018990</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12773510/" target="_blank" rel="noopener noreferrer">CXCR3 et trafic T · PMID 12773510</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/38593796/" target="_blank" rel="noopener noreferrer">IFN-I et mémoire B atypique · PMID 38593796</a></p>
   </div>
 
   <h2 class="section-head">4 · Fonctions contextuelles de YBX1 et terrain familial</h2>
-    <div class="support-grid" aria-label="Fonctions secondaires de YBX1 en trois colonnes">
-      <div class="node hypothesis">
-        <span class="viz-badge section4-badge">extension mitochondriale</span>
-        <div class="node-title">ADN mitochondrial</div>
-        <p>Hypomorphisme YBX1 → réparation / contrôle qualité possiblement ↓ → lésions de l’ADN mitochondrial et mitophagie perturbée → dysfonction possible, sans déplétion obligatoire.</p>
-        <p>≈43 copies par cellule diploïde, estimation sanguine WGS (359× / 16,7× × 2). Donnée exploratoire influencée par la composition du sang et la méthode ; ni seuil diagnostique ni preuve causale pour YBX1.</p>
-        <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/19272840/" target="_blank" rel="noopener noreferrer">réparation de l’ADN mitochondrial · PMID 19272840</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/35195911/" target="_blank" rel="noopener noreferrer">mitophagie PINK1/PRKN · PMID 35195911</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/34157430/" target="_blank" rel="noopener noreferrer">composition du sang · PMID 34157430</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32004343/" target="_blank" rel="noopener noreferrer">méthodes de quantification · PMID 32004343</a></p>
-      </div>
       <div class="node tgfb">
         <span class="viz-badge section4-badge">boucles contextuelles</span>
         <div class="node-title">Boucles IFN-γ / TGF-β</div>
@@ -1529,15 +1505,6 @@ html>body{
         <p>YBX1 → SMAD7 ↑ / interférence SMAD3–p300 → frein à la fibrose ; ou boucle YBX1–SMAD2 → remodelage. Sens dépendant du tissu et de la localisation de YBX1, non déductible du WGS.</p><p>Le lichen est compatible avec une activité cutanée IFN-I/IFN-γ, sans mesurer l’IFN-γ global. <a href="https://pubmed.ncbi.nlm.nih.gov/33113249/" target="_blank" rel="noopener noreferrer">PMID 33113249</a>.</p>
         <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/16278212/" target="_blank" rel="noopener noreferrer">JAK1 · PMID 16278212</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12917425/" target="_blank" rel="noopener noreferrer">CK2 · PMID 12917425</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19036157/" target="_blank" rel="noopener noreferrer">ERK/RSK contextuel · PMID 19036157</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42153611/" target="_blank" rel="noopener noreferrer">iNKT · PMID 42153611</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12917425/" target="_blank" rel="noopener noreferrer">PMID 12917425</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16278212/" target="_blank" rel="noopener noreferrer">PMID 16278212</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/28153731/" target="_blank" rel="noopener noreferrer">PMID 28153731</a></p>
       </div>
-      <div class="node hypothesis">
-        <span class="viz-badge section4-badge">homéostasie tissulaire</span>
-        <div class="node-title">Sénescence / SASP et tissus</div>
-        <p>Rôle homéostatique hors oncologie : frein traductionnel sur le SASP des kératinocytes, modulé par la phosphorylation liée à l’âge (CXCL1, IL-8/CXCL8).</p>
-        <p>Hypomorphisme → SASP et sénescence possiblement ↑ : extrapolation des données épidermiques, non démontrée pour le variant.</p>
-        <p>Disque intervertébral : axe HDAC1–YBX1 impliqué dans l’homéostasie du nucleus pulposus ; sans attribution causale chez le patient.</p>
-        <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/29712925/" target="_blank" rel="noopener noreferrer">sénescence épidermique · PMID 29712925</a> · <a href="https://doi.org/10.3390/cells15171586" target="_blank" rel="noopener noreferrer">phosphorylation liée à l’âge et SASP · Cells 2026</a> · <a href="https://doi.org/10.1038/s12276-026-01843-8" target="_blank" rel="noopener noreferrer">disque intervertébral · 2026</a></p>
-      </div>
-    </div>
 
     <div class="node tgfb spaced">
       <span class="viz-badge section4-badge">terrain familial</span>
@@ -1545,16 +1512,6 @@ html>body{
       <p>Le phénotype conjonctivo-vasculaire Loeys–Dietz-like est familial et compatible avec une dérégulation TGF-β non résolue. L’immunodéficience ne concerne pas les apparentés et YBX1 ne ségrège pas : il ne peut expliquer le terrain familial, mais pourrait en modifier les sorties chez le patient.</p>
       <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/24355923/" target="_blank" rel="noopener noreferrer">Activation TGF-β paradoxale · PMID 24355923</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK1133/" target="_blank" rel="noopener noreferrer">GeneReviews</a></p>
     </div>
-  <div class="node hypothesis spaced">
-    <span class="viz-badge section4-badge">observation et hypothèse</span>
-        <div class="node-title">DNT αβ ↑ : mise en perspective avec les seuils ALPS</div>
-    <p>DNT totaux : 140/mm³ (7,6 % des T), dont αβ⁺ 47/mm³ et γδ⁺ 93/mm³. Les DNT αβ représentent ≈2,56 % des T (47/1 837) et ≈1,93 % des lymphocytes totaux (47/2 435).</p>
-    <p><strong>Seuils immunophénotypiques du consensus ALPS :</strong> DNT CD3⁺TCRαβ⁺CD4⁻CD8⁻ ≥2,5 % des T ou ≥1,5 % des lymphocytes totaux, avec une numération lymphocytaire normale ou élevée. La fraction αβ dépasse ces seuils ; ce critère isolé ne suffit pas au diagnostic d’ALPS et ne démontre pas un défaut d’apoptose ni un lien causal avec YBX1.</p>
-    <p>Ces seuils excluent les DNT γδ. La majorité γδ (66,2 % des DNT) ne banalise donc pas l’élévation αβ. Les T γδ totaux sont à 103/mm³, soit 4,2 % des lymphocytes totaux (normes du bilan : 25–200/mm³ et 1–11 %).</p>
-    <p>Le lichen implique des T γδ dans les lésions, mais les études ne permettent pas de lui attribuer ces DNT ni d’établir une relation causale.</p>
-    <p><strong>Extension exploratoire — DNT :</strong> conversion CD8→DN via CREMα, puis persistance éventuellement favorisée par le contexte inflammatoire (section 3). L’absence de variant germinal ALPS identifié ne valide pas ce modèle par élimination. Une anomalie FAS somatique restreinte à une sous-population reste une piste distincte, qui peut échapper à une analyse germinale standard.</p>
-    <p class="source-row text-small"><a href="https://doi.org/10.1182/blood-2010-04-280347" target="_blank" rel="noopener noreferrer">Consensus ALPS · Blood 2010</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/2141552/" target="_blank" rel="noopener noreferrer">γδ parmi les DNT · PMID 2141552</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/8077699/" target="_blank" rel="noopener noreferrer">γδ dans le lichen · PMID 8077699</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/20360470/" target="_blank" rel="noopener noreferrer">FAS somatique restreint aux DNT · PMID 20360470</a></p>
-  </div>
 
   <h2 class="section-head">5 · Question de recherche et chaîne de validation</h2>
   <div class="research-question">
@@ -1575,28 +1532,30 @@ html>body{
     <div class="step">
       <div class="node-title">Étage fonctionnel prioritaire</div>
       <p><strong>Priorité B :</strong> vérifier si les lymphocytes B répondent moins bien à leur récepteur (BCR) et produisent moins d’immunoglobulines.</p>
-      <p><strong>Puis les DNT :</strong> préciser leur origine et rechercher une survie prolongée (CREMα, clonalité, tests d’apoptose ; FAS somatique si indiqué). Leur augmentation seule ne prouve pas un défaut d’apoptose.</p>
     </div>
   </div>
 
   <div class="node hypothesis spaced-wide">
     <div class="node-title">Hypothèse du patient</div>
-    <p><strong>Modèle de convergence mécanistique :</strong> IFIH1 A946T fournit une pression IFN-I, IRF5 4×CGGGG amplifie les signaux TLR/cytokiniques et YBX1 c.231−96C&gt;G est orienté par SpliceAI, Pangolin et le renforcement local MaxEntScan vers un hypomorphisme d’épissage partiel plutôt que vers un GoF global. Cet hypomorphisme pourrait associer deux conséquences : une baisse du signal BCR et de la traduction/production des Ig contribuant à l’hypogammaglobulinémie ; et, au premier plan du versant inflammatoire, une réponse IL‑6/STAT3 et des ISG ↑ par défaut de contrôle des ARN Pol III/RIG‑I. Cette réponse pourrait renforcer la convergence IFIH1–IRF5 et entretenir l’activation T. Le LoF homozygote toléré de GBP3 pourrait ajouter une inefficacité effectrice en aval et prolonger indirectement le stimulus. <strong>Extensions exploratoires :</strong> une moindre induction de l’épuisement des CD8 sous hypomorphisme, extrapolée d’un modèle tumoral murin (section 2), et un lien éventuel avec les DNT αβ : l’activation chronique pourrait favoriser une conversion CD8→DN via CREMα ; des signaux pro-survie (IL‑6/STAT3–cFLIP ou IL‑17, sans hiérarchie entre ces possibilités) pourraient contribuer à leur persistance. Ni la liaison IFN-I→CREMα, ni une apoptose réduite, ni ces relais cytokiniques ne sont démontrés chez le patient. Ce mécanisme indirect pourrait coexister avec un hypomorphisme sans nécessiter une séparation de fonctions. Le terrain familial TGF-β reste distinct mais potentiellement modificateur ; les anomalies MBL/AP50 peuvent refléter un déficit basal et/ou une consommation partielle intermittente, sans lien causal démontré avec cet ensemble.</p>
+    <p><strong>Modèle de convergence mécanistique :</strong> IFIH1 A946T et IRF5 4×CGGGG fourniraient un fond IFN/TLR sensibilisé. Les prédictions d’épissage orientent YBX1 c.231−96C&gt;G vers un hypomorphisme partiel, susceptible d’associer signal BCR/traduction des Ig ↓ et défaut de contrôle des ARN Pol III–RIG-I → IL‑6/STAT3 + ISG ↑. Ce modèle relierait déficit humoral et inflammation, sans effet du variant encore démontré. GBP3 reste un modificateur éventuel. Le terrain familial TGF-β demeure distinct ; les anomalies MBL/AP50 peuvent refléter un déficit basal et/ou une consommation intermittente, sans lien causal établi avec cet ensemble.</p>
   </div>
 
   <div class="limits" aria-label="Points faibles de l’hypothèse">
     <div class="node-title">Points faibles à exposer d’emblée</div>
     <ul>
       <li><strong>Hypomorphisme prioritaire :</strong> la synthèse de l’audit in silico privilégie nettement un hypomorphisme d’épissage partiel : SpliceAI DS_DG 0,439 et Pangolin DS_SG 0,106 ciblent le même donneur cryptique à −5, renforcé par MaxEntScan 4,11 → 9,57. Cette orientation ne quantifie toutefois ni l’utilisation du site ni la perte d’activité ; l’effet ARN/protéine reste à établir.</li>
-      <li><strong>Alternative à départager :</strong> la séparation de fonctions nécessite des effets fonctionnels dissociés, au-delà de différences de sensibilité entre cellules. Elle ne découle ni du contraste déficit humoral/DNT ni d’une apoptose T réduite isolée, et ne doit pas devenir une explication automatique de tout résultat discordant. Un épissage et une fonction préservés dans les conditions pertinentes affaibliraient la piste YBX1.</li>
+      <li><strong>Alternative à départager :</strong> la séparation de fonctions nécessite des effets dissociés, au-delà de différences de sensibilité entre cellules. Elle ne doit pas expliquer automatiquement tout résultat discordant. Un épissage et une fonction préservés affaibliraient la piste YBX1.</li>
       <li>IFIH1 A946T et IRF5 4×CGGGG sont des allèles de risque communs ; leur épistasie avec YBX1 n’est pas établie et la phase IRF5 reste à confirmer.</li>
-      <li>La délétion homozygote de GBP3 est assez commune et sans maladie mendélienne attribuée : elle ne peut donc pas expliquer à elle seule le phénotype. Au maximum, elle pourrait moduler certaines défenses antivirales en aval de l’IFN ; l’idée qu’une moindre clairance prolonge secondairement le stimulus IFN/TLR reste spéculative, et le sens de son effet global est indéterminé.</li>
-      <li>Les DNT sont majoritairement γδ, mais la fraction αβ dépasse les seuils immunophénotypiques du consensus ALPS. Ce seul résultat ne diagnostique pas un ALPS ; son lien avec l’apoptose, YBX1 ou l’inflammation reste non démontré.</li>
+      <li>La délétion GBP3 est assez commune : son rôle de modificateur reste spéculatif et ne suffit pas à expliquer le phénotype.</li>
       <li>Le lichen est un indice cutané, non un dosage systémique des IFN ; le terrain TGF-β familial reste inféré et sans cause génétique identifiée.</li>
-      <li>Le modèle DNT « conversion puis persistance » repose sur des analogies : CREMα dans le lupus, synergie avec une perte complète de Fas chez la souris, et STAT3–MCL‑1 dans les T-LGL clonales. Ces résultats ne démontrent ni un défaut de Fas ni une apoptose réduite chez le patient ; la clonalité des DNT n’est pas établie ici.</li>
       <li>Le modèle est une hypothèse de recherche falsifiable, pas un diagnostic moléculaire.</li>
     </ul>
   </div>
+  <footer id="note-alps" role="doc-endnotes" style="margin-top:16px; padding-top:10px; border-top:1px solid var(--border);">
+    <p><strong>[1] DNT αβ et seuils ALPS :</strong> 47/mm³, soit ≈2,56 % des T et ≈1,93 % des lymphocytes : ces valeurs atteignent les seuils immunophénotypiques du consensus ALPS (≥2,5 % des T ou ≥1,5 % des lymphocytes, avec une numération lymphocytaire normale ou élevée). Ce critère isolé ne diagnostique pas un ALPS et ne démontre pas un défaut d’apoptose. <a href="https://doi.org/10.1182/blood-2010-04-280347" target="_blank" rel="noopener noreferrer">Consensus ALPS · Blood 2010</a>.</p>
+    <p><strong>Pistes exploratoires :</strong> activation chronique/IFN-I → conversion CD8→DN via CREMα, puis persistance favorisée par des signaux pro-survie (IL‑6/STAT3–cFLIP ou IL‑17). Ces raccords reposent sur des analogies de contextes différents : ni le lien IFN-I→CREMα, ni une apoptose réduite, ni un lien causal avec YBX1 ne sont démontrés ici. Les DNT pourraient aussi relever de déterminants indépendants. <a href="https://pubmed.ncbi.nlm.nih.gov/24297179/" target="_blank" rel="noopener noreferrer">CREMα</a> · <a href="https://doi.org/10.1172/JCI17970" target="_blank" rel="noopener noreferrer">STAT3/FLIP</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/24363402/" target="_blank" rel="noopener noreferrer">IL‑17</a>.</p>
+  </footer>
+
 </div>
 
 <script src="https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js"></script>
