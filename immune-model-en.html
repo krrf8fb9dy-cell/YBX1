@@ -1037,7 +1037,6 @@ html>body{
 }</style>
 </head>
 <body>
-<p style="text-align:right; font-family: sans-serif; font-size: 0.85em; margin: 8px 12px;"><a href="index.html">← Version française</a></p>
 <div id="ifi-ybx-research-model" role="region" aria-label="Modèle de recherche hiérarchisé reliant le phénotype immunitaire du patient à YBX1, IFIH1, IRF5, GBP3, au ADN mitochondrial, aux interférons et au TGF-bêta">
   <style>
     #ifi-ybx-research-model {
@@ -1090,8 +1089,8 @@ html>body{
     #ifi-ybx-research-model .swatch.tgfb { background: var(--cat-tgfb); }
     #ifi-ybx-research-model .swatch.gbp { background: var(--cat-gbp); }
     #ifi-ybx-research-model .swatch.hypothesis {
-      background: transparent;
-      border: 2px dashed var(--cat-hypothesis);
+      background: var(--cat-hypothesis);
+      border-color: var(--cat-hypothesis);
     }
     #ifi-ybx-research-model .section-head {
       width: 100%;
@@ -1229,8 +1228,8 @@ html>body{
     #ifi-ybx-research-model .research-question {
       margin-top: 11px;
       padding: 16px;
-      border-left: 4px solid var(--primary);
-      background: color-mix(in srgb, var(--primary) 22%, var(--background));
+      border-left: 4px solid var(--cat-hypothesis);
+      background: color-mix(in srgb, var(--cat-hypothesis) 16%, var(--background));
       color: var(--foreground);
     }
     #ifi-ybx-research-model .research-question a { color: inherit; }
@@ -1262,8 +1261,8 @@ html>body{
       border-left-color: var(--cat-ybx);
     }
     #ifi-ybx-research-model .validation-flow .step:nth-child(5) {
-      background: color-mix(in srgb, var(--cat-ifng) 17%, var(--background));
-      border-left-color: var(--cat-ifng);
+      background: color-mix(in srgb, var(--foreground) 9%, var(--background));
+      border-left-color: var(--muted-foreground);
     }
     #ifi-ybx-research-model .arrow {
       align-self: center;
@@ -1335,7 +1334,22 @@ html>body{
     #ifi-ybx-research-model li + li { margin-top:6px; }
     #ifi-ybx-research-model .exploratory-block { margin-top:10px; padding-top:10px; }
     #ifi-ybx-research-model .viz-badge { margin-bottom:5px; }
+    /* Three competing scenarios: the same neutral gray treatment. */
+    #ifi-ybx-research-model .core > .viz-grid > .node {
+      border-left-color: var(--muted-foreground);
+      background: color-mix(in srgb, var(--foreground) 9%, var(--background));
+    }
+    #ifi-ybx-research-model .core > .viz-grid > .node > .viz-badge {
+      background: color-mix(in srgb, var(--foreground) 15%, var(--background));
+      color: var(--foreground);
+    }
   </style>
+
+  <div class="lang-switch" style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px;font-size:var(--font-size-small);">
+    <a href="index.html">Français</a>
+    <span aria-hidden="true">·</span>
+    <span style="opacity:0.6;">English</span>
+  </div>
 
   <div class="research-question" aria-label="Model summary" style="margin-bottom:16px;">
     <div class="node-title">In brief</div>
@@ -1417,7 +1431,7 @@ html>body{
     <div class="connector">expected consequences by compartment: B-cell branch prioritized; T-cell branch provides a directional prediction only</div>
 
     <div class="two-grid">
-      <div class="branch irf">
+      <div class="branch ybx">
         <span class="viz-badge">B-cell branch · priority functional output</span>
         <div class="node-title">YBX1–BCR / Ig mRNA translation ↓</div>
         <div class="pathway">B cells present and mature → BCR signaling/Ig output ↓ → hypogammaglobulinemia</div>
@@ -1515,7 +1529,7 @@ html>body{
         <p>YBX1 → SMAD7 ↑ / SMAD3–p300 interference → restraint on fibrosis; or YBX1–SMAD2 loop → remodeling. Direction depends on tissue and YBX1 localization and cannot be inferred from WGS.</p><p>Lichen planus is consistent with cutaneous IFN-I/IFN-γ activity, without measuring overall IFN-γ levels. <a href="https://pubmed.ncbi.nlm.nih.gov/33113249/" target="_blank" rel="noopener noreferrer">PMID 33113249</a>.</p>
         <p class="source-row text-small"><a href="https://pubmed.ncbi.nlm.nih.gov/16278212/" target="_blank" rel="noopener noreferrer">JAK1 · PMID 16278212</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12917425/" target="_blank" rel="noopener noreferrer">CK2 · PMID 12917425</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19036157/" target="_blank" rel="noopener noreferrer">context-dependent ERK/RSK · PMID 19036157</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42153611/" target="_blank" rel="noopener noreferrer">iNKT · PMID 42153611</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12917425/" target="_blank" rel="noopener noreferrer">PMID 12917425</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16278212/" target="_blank" rel="noopener noreferrer">PMID 16278212</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/28153731/" target="_blank" rel="noopener noreferrer">PMID 28153731</a></p>
       </div>
-      <div class="node ybx">
+      <div class="node hypothesis">
         <span class="viz-badge section4-badge">tissue homeostasis</span>
         <div class="node-title">Senescence / SASP and tissues</div>
         <p>Homeostatic role beyond oncology: translational restraint on keratinocyte SASP, modulated by age-related phosphorylation (CXCL1, IL-8/CXCL8).</p>
